@@ -30,7 +30,8 @@ task('deploy:secrets', function () {
     upload('.env', get('deploy_path') . '/shared');
 });
 
-host('hilmimub@hilmimubarok.com')
+host('prod')
+    ->setHostname('hilmimub@hilmimubarok.com')
     ->set('remote_user', 'hilmimub')
     ->set('branch', 'main')
     ->set('deploy_path', '~/test-cicd-laravel');
